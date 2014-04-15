@@ -1,3 +1,5 @@
+var visible = false;
+
 Puls3.Views.App = Backbone.View.extend({
 	events: {
 		"click .publicar" : "showForm",
@@ -7,7 +9,15 @@ Puls3.Views.App = Backbone.View.extend({
 		this.$el = $el
 	},
 	showForm: function () {
-		this.$el.find('form').show()
+		var form = this.$el.find('form')
+		if(visible){
+			form.hide()
+			visible = false
+		}
+		else{
+			form.show()
+			visible = true
+		}
 	},
 	createArticle: function (e) {
 		e.preventDefault()
@@ -26,5 +36,15 @@ Puls3.Views.App = Backbone.View.extend({
 
 		var model = new Puls3.Models.Article(data)
 		model.save()
+
+		var form = this.$el.find('form')
+		if(visible){
+			form.hide()
+			visible = false
+		}
+		else{
+			form.show()
+			visible = true
+		}
 	}
 })
