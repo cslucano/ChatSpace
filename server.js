@@ -39,11 +39,10 @@ app.post('/articles', function (req, res){
 	req.body.id = uuid.v1();
 	req.body.votes = 0;
 	req.body.image = "/imagenes/img4.jpg";
-	//req.body.user  = "Siedrix";
 
 	data.push(req.body);
 
-	console.log('articles::create', req.body);
+	//console.log('articles::create', req.body);
 
 	io.sockets.emit('articles::create', req.body);
 
@@ -61,7 +60,7 @@ app.put('/articles/', function (req, res){
 		}
 	}
 
-	console.log('articles::update', req.body);
+	//console.log('articles::update', req.body);
 
 	io.sockets.emit('articles::update', req.body);
 
@@ -81,6 +80,8 @@ app.get('/article/:id', home);
 //server.listen(3000);
 
 var port = Number(process.env.PORT || 5000);
+server.listen(post)
+/*
 server.listen(port, function() {
-  console.log("Listening on " + port);
-});
+  //console.log("Listening on " + port);
+});*/
