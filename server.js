@@ -78,8 +78,9 @@ var home = function (req, res) {
 app.get('/', home);
 app.get('/article/:id', home);
 
+//server.listen(3000);
 
-var port = Number(process.env.PORT || 3000);
-app.listen(port, function() {
+var port = Number(process.env.PORT || 5000);
+server.listen(port, function() {
   console.log("Listening on " + port);
 });
