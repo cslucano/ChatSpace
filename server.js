@@ -42,8 +42,6 @@ app.post('/articles', function (req, res){
 
 	data.push(req.body);
 
-	//console.log('articles::create', req.body);
-
 	io.sockets.emit('articles::create', req.body);
 
 	res.send(200, {status:"Ok", id: req.body.id});
@@ -60,8 +58,6 @@ app.put('/articles/', function (req, res){
 		}
 	}
 
-	//console.log('articles::update', req.body);
-
 	io.sockets.emit('articles::update', req.body);
 
 	res.send(200, {status:"Ok"});
@@ -77,11 +73,5 @@ var home = function (req, res) {
 app.get('/', home);
 app.get('/article/:id', home);
 
-//server.listen(3000);
-
 var port = Number(process.env.PORT || 5000);
 server.listen(port)
-/*
-server.listen(port, function() {
-  //console.log("Listening on " + port);
-});*/
