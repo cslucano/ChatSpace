@@ -80,7 +80,7 @@ app.get('/article/:id', home);
 //server.listen(3000);
 
 var port = Number(process.env.PORT || 5000);
-server.listen(post)
+server.listen(port)
 /*
 server.listen(port, function() {
   //console.log("Listening on " + port);
