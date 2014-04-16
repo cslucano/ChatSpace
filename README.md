@@ -6,7 +6,8 @@ Comuniad de LOLs y XDs dedicada al trolleo profesional la investigación y el de
 Instrucciones.
 
 - Instalar NodeJS
-Linux-Ubuntu
+
+<b>Linux-Ubuntu</b>
 ```
 $ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
